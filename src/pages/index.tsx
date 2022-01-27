@@ -72,7 +72,6 @@ const badgeStyle = {
   borderRadius: 4,
   padding: "4px 6px",
   display: "inline-block",
-  position: "relative",
   top: -2,
   marginLeft: 10,
   lineHeight: 1,

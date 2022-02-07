@@ -23,9 +23,9 @@ const Layout = ({
   footer,
 }: {
   children: any;
-  isHome: any;
-  animateNav: any;
-  footer: any;
+  isHome: boolean;
+  animateNav: boolean;
+  footer: boolean;
 }) => {
   useEffect(() => {
     function preventRightClick(e: any) {

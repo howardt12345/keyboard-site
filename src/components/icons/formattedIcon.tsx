@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { IconLogo, IconNotFound } from '@components/icons';
 import {
   MdAccountCircle,
@@ -24,7 +23,7 @@ import { CgGitFork } from 'react-icons/cg'
 import { ImLinkedin } from 'react-icons/im';
 import { SiRedbubble } from 'react-icons/si';
 
-const FormattedIcon = ({ name }) => {
+const FormattedIcon = ({ name } : {name: string}) => {
   switch (name) {
     case 'About':
       return <MdAccountCircle />;
@@ -69,10 +68,6 @@ const FormattedIcon = ({ name }) => {
     default:
       return <FaExternalLinkAlt />;
   }
-};
-
-FormattedIcon.propTypes = {
-  name: PropTypes.string.isRequired,
 };
 
 export default FormattedIcon;

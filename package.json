@@ -36,6 +36,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "scrollreveal": "^4.0.9",
     "styled-components": "^5.3.3",
     "throttle-typescript": "^1.1.0"
   },
@@ -44,6 +45,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-helmet": "^6.1.5",
     "@types/react-transition-group": "^4.4.4",
+    "@types/scrollreveal": "^0.0.7",
     "@types/styled-components": "^5.1.22"
   }
 }

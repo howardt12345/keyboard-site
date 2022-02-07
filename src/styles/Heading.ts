@@ -8,11 +8,11 @@ const Heading = styled.h1`
   text-align: left;
   font-family: ${fonts.Poppins};
   color: ${({ theme }) => theme.textPrimary};
-  font-size: 96px;
+  font-size: 64px;
   font-weight: 400;
-  ${media.bigDesktop`font-size: 96px;`};
-  ${media.tablet`font-size: 64px;`};
-  ${media.phone`font-size: 52px;`};
+  ${media.bigDesktop`font-size: 64px;`};
+  ${media.tablet`font-size: 56px;`};
+  ${media.phone`font-size: 48px;`};
 `;
 
 export default Heading;

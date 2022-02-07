@@ -91,8 +91,8 @@ const PrismStyles = css`
   }
   /* Language badges */
   .gatsby-highlight pre[class*='language-']::before {
-    background: ${({ theme }) => theme.colors.background};
-    color$: {({ theme }) => theme.colors.textPrimary};
+    background: ${({ theme }) => theme.background};
+    color$: {({ theme }) => theme.textPrimary};
     font-size: ${fontSizes.xs};
     font-family: ${fonts.Raleway};
     line-height: 1.5;

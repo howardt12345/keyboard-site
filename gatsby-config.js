@@ -42,5 +42,30 @@ module.exports = {
         allExtensions: true, // defaults to false
       },
     },
+    {
+      resolve: `gatsby-styled-components-dark-mode`,
+      options: {
+        light: {
+          background: '#FFFFFF',
+          background_secondary: '#EAEAEA',
+          accent: '#2196F3',
+          textPrimary: '#000000',
+          textSecondary: '#7A7A7A',
+          textBody: '#0C0C0C',
+          translucent_accent: 'rgba(33, 150, 243, 0.07)',
+          shadow_bg: 'rgba(234, 234, 234, 0.07)',
+        },
+        dark: {
+          background: '#121212',
+          background_secondary: '#151515',
+          accent: '#64ffda',
+          textPrimary: '#FFFFFF',
+          textSecondary: '#858585',
+          textBody: '#F3F3F3',
+          translucent_accent: 'rgba(100, 255, 218, 0.07)',
+          shadow_bg: 'rgba(21, 21, 21, 0.07)',
+        },
+      },
+    },
   ],
 };

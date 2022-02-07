@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { Head, Nav, Footer } from "@components";
 import styled from "styled-components";
@@ -16,17 +16,13 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-const Layout = ({
-  children,
-  isHome,
-  animateNav,
-  footer,
-}: {
-  children: any;
+interface LayoutProps {
   isHome: boolean;
   animateNav: boolean;
   footer: boolean;
-}) => {
+}
+
+const Layout = (props: any) => {
   useEffect(() => {
     function preventRightClick(e: any) {
       if (e.target.tagName === "IMG") {
@@ -38,6 +34,8 @@ const Layout = ({
     document.addEventListener("contextmenu", preventRightClick);
     return () => document.removeEventListener("contextmenu", preventRightClick);
   });
+
+  const { children, isHome, animateNav, footer } = props;
 
   return (
     <StaticQuery

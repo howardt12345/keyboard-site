@@ -6,7 +6,7 @@ const { fonts } = theme;
 const Subheading = styled.h2`
   text-align: left;
   font-family: ${fonts.Poppins};
-  color: ${({ theme }) => theme.colors.textPrimary};
+  color: ${({ theme }) => theme.textPrimary};
   font-size: 54px;
   font-weight: 400;
   ${media.desktop`font-size: 54px;`};

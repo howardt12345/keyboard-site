@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { theme as themeValues, theme_light, theme_dark } from './theme';
+import { theme as themeValues } from './theme';
 import media from './media';
 import mixins from './mixins';
 import FontFaces from './fonts';
@@ -26,8 +26,8 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.textPrimary};
     line-height: 1.3;
     font-family: ${fonts.Poppins};
     font-size: ${fontSizes.xl};
@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.textSecondary};
+    color: ${({ theme }) => theme.textSecondary};
     margin: 0 0 10px 0;
   }
   h1 {
@@ -104,7 +104,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.accent};
     }
   }
   button {
@@ -113,7 +113,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 0;
     &:focus,
     &:active {
-      outline-color: ${({ theme }) => theme.colors.accent};
+      outline-color: ${({ theme }) => theme.accent};
     }
   }
   input, textarea {
@@ -137,8 +137,8 @@ const GlobalStyle = createGlobalStyle`
       ${mixins.inlineLink};
     }
     & > code {
-      background-color: ${({ theme }) => theme.colors.background};
-      color: ${({ theme }) => theme.colors.background};
+      background-color: ${({ theme }) => theme.background};
+      color: ${({ theme }) => theme.background};
       font-size: ${fontSizes.sm};
       border-radius: ${themeValues.borderRadius};
       padding: 0.3em 0.5em;
@@ -158,13 +158,13 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: ${({ theme }) => theme.colors.accent};
+          color: ${({ theme }) => theme.accent};
         }
       }
     }
   }
   blockquote {
-    border-left-color: ${({ theme }) => theme.colors.accent};
+    border-left-color: ${({ theme }) => theme.accent};
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -176,7 +176,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   hr {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.background};
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -189,16 +189,16 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizes.md};
   }
   #logo {
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.accent};
   }
   .overline {
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.accent};
     font-family: ${fonts.Raleway};
     font-size: ${fontSizes.md};
     font-weight: normal;
   }
   .subtitle {
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.accent};
     margin: 0 0 20px 0;
     font-size: ${fontSizes.md};
     font-family: ${fonts.Poppins};
@@ -215,7 +215,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.accent};
     .arrow {
       display: block;
       margin-right: 10px;

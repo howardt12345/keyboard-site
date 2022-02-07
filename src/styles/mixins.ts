@@ -31,7 +31,7 @@ const mixins = {
     &:hover,
     &:active,
     &:focus {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.accent};
       outline: 0;
     }
   `,
@@ -43,17 +43,17 @@ const mixins = {
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.accent};
     &:hover,
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.accent};
       outline: 0;
       &:after {
         width: 100%;
       }
       & > * {
-        color: ${({ theme }) => theme.colors.accent} !important;
+        color: ${({ theme }) => theme.accent} !important;
         transition: ${theme.transition};
       }
     }
@@ -64,14 +64,14 @@ const mixins = {
       height: 1px;
       position: relative;
       bottom: 0.37em;
-      background-color: ${({ theme }) => theme.colors.accent};
+      background-color: ${({ theme }) => theme.accent};
       transition: ${theme.transition};
       opacity: 0.5;
     }
   `,
 
   smallButton: css`
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.accent};
     background-color: transparent;
     border: 1px solid accent;
     border-radius: ${theme.borderRadius};
@@ -85,7 +85,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: ${({ theme }) => theme.colors.translucent_accent};
+      background-color: ${({ theme }) => theme.translucent_accent};
     }
     &:after {
       display: none !important;
@@ -93,7 +93,7 @@ const mixins = {
   `,
 
   bigButton: css`
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.accent};
     background-color: transparent;
     border: 1px solid accent;
     border-radius: ${theme.borderRadius};
@@ -107,7 +107,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: ${({ theme }) => theme.colors.translucent_accent};
+      background-color: ${({ theme }) => theme.translucent_accent};
     }
     &:after {
       display: none !important;
@@ -122,11 +122,11 @@ const mixins = {
   `,
 
   boxShadow: css`
-    box-shadow: 0 10px 30px -15px ${({ theme }) => theme.colors.shadow_bg};
+    box-shadow: 0 10px 30px -15px ${({ theme }) => theme.shadow_bg};
     transition: ${theme.transition};
     &:hover,
     &:focus {
-      box-shadow: 0 20px 30px -15px ${({ theme }) => theme.colors.shadow_bg};
+      box-shadow: 0 20px 30px -15px ${({ theme }) => theme.shadow_bg};
     }
   `,
 
@@ -143,7 +143,7 @@ const mixins = {
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${({ theme }) => theme.colors.accent};
+        color: ${({ theme }) => theme.accent};
       }
     }
   `,

@@ -7,33 +7,30 @@ const BG_dark = '#121212';
 
 export const theme_light = {
   name: 'light',
-  colors: {
-    background: BG,
-    background_secondary: DARK_BG,
-    accent: ACCENT,
-    textPrimary: '#000000',
-    textSecondary: '#7A7A7A',
-    textBody: '#0C0C0C',
-    translucent_accent: 'rgba(33, 150, 243, 0.07)',
-    shadow_bg: 'rgba(234, 234, 234, 0.07)',
-  }
+  background: BG,
+  background_secondary: DARK_BG,
+  accent: ACCENT,
+  textPrimary: '#000000',
+  textSecondary: '#7A7A7A',
+  textBody: '#0C0C0C',
+  translucent_accent: 'rgba(33, 150, 243, 0.07)',
+  shadow_bg: 'rgba(234, 234, 234, 0.07)',
 };
 
 export const theme_dark = {
   name: 'dark',
-  colors: {
-    background: BG_dark,
-    background_secondary: DARK_BG_dark,
-    accent: ACCENT_dark,
-    textPrimary: '#FFFFFF',
-    textSecondary: '#858585',
-    textBody: '#F3F3F3',
-    translucent_accent: 'rgba(100, 255, 218, 0.07)',
-    shadow_bg: 'rgba(21, 21, 21, 0.07)',
-  }
+  background: BG_dark,
+  background_secondary: DARK_BG_dark,
+  accent: ACCENT_dark,
+  textPrimary: '#FFFFFF',
+  textSecondary: '#858585',
+  textBody: '#F3F3F3',
+  translucent_accent: 'rgba(100, 255, 218, 0.07)',
+  shadow_bg: 'rgba(21, 21, 21, 0.07)',
 }
 
 export const theme = {
+
   fonts: {
     Poppins: "Poppins",
     Raleway: "raleway, sans-serif",

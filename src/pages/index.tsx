@@ -1,13 +1,16 @@
-import { Layout } from "@components"
-import * as React from "react"
+import { Layout } from "@components";
+import { Heading, Section } from "@styles";
+import * as React from "react";
 
 // markup
 const IndexPage = () => {
   return (
-    <Layout animateNav={false} isHome={true} footer={true}>
-      <h1>Home Page</h1>
+    <Layout animateNav={true} isHome={false} footer={true}>
+      <Section>
+        <Heading>Home Page</Heading>
+      </Section>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

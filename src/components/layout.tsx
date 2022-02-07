@@ -16,12 +16,6 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-interface LayoutProps {
-  isHome: boolean;
-  animateNav: boolean;
-  footer: boolean;
-}
-
 const Layout = (props: any) => {
   useEffect(() => {
     function preventRightClick(e: any) {

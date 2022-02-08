@@ -47,20 +47,20 @@ const config = {
   },
   navLinks: [
     {
-      name: "About",
-      url: '/about'
+      name: "Designs",
+      url: '/designs'
     },
     {
-      name: "Photography",
-      url: '/photography'
+      name: "Updates",
+      url: '/updates'
     },
     {
-      name: "Projects",
-      url: '/projects'
+      name: "Builds",
+      url: '/builds'
     },
     {
-      name: "Contact",
-      url: '/contact'
+      name: "More",
+      url: '/more'
     },
   ],
   navHeight: 72,

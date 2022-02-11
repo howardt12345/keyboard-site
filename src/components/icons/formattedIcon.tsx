@@ -1,5 +1,5 @@
-import React from 'react';
-import { IconLogo, IconNotFound } from '@components/icons';
+import React from "react";
+import { IconLogo, IconNotFound } from "@components/icons";
 import {
   MdAccountCircle,
   MdBrightness3,
@@ -19,51 +19,51 @@ import {
   FaRegFolder,
   FaStar,
 } from "react-icons/fa";
-import { CgGitFork } from 'react-icons/cg'
-import { ImLinkedin } from 'react-icons/im';
-import { SiRedbubble } from 'react-icons/si';
+import { CgGitFork } from "react-icons/cg";
+import { ImLinkedin } from "react-icons/im";
+import { SiRedbubble } from "react-icons/si";
 
-const FormattedIcon = ({ name } : {name: string}) => {
+const FormattedIcon = ({ name }: { name: string }) => {
   switch (name) {
-    case 'About':
+    case "About":
       return <MdAccountCircle />;
-    case 'Photography':
+    case "Photography":
       return <MdPhotoCamera />;
-    case 'Projects':
+    case "Projects":
       return <MdFolderOpen />;
-    case 'Contact':
+    case "Contact":
       return <MdContactMail />;
     case "dark":
       return <MdBrightness7 />;
-    case 'Dribbble':
+    case "Dribbble":
       return <FaDribbble />;
-    case 'Email':
+    case "Email":
       return <MdEmail />;
-    case 'External':
+    case "External":
       return <FaExternalLinkAlt />;
-    case 'Folder':
+    case "Folder":
       return <FaRegFolder />;
-    case 'Fork':
+    case "Fork":
       return <CgGitFork />;
-    case 'GitHub':
+    case "GitHub":
       return <FaGithub />;
-    case 'Instagram':
+    case "Instagram":
       return <FaInstagram />;
     case "light":
       return <MdBrightness3 />;
-    case 'Linkedin':
+    case "Linkedin":
       return <ImLinkedin />;
-    case 'Location':
+    case "Location":
       return <MdLocationOn />;
-    case 'Logo':
+    case "Logo":
       return <IconLogo />;
-    case 'NotFound':
+    case "NotFound":
       return <IconNotFound />;
-    case 'PlayStore':
+    case "PlayStore":
       return <FaGooglePlay />;
-    case 'Redbubble':
+    case "Redbubble":
       return <SiRedbubble />;
-    case 'Star':
+    case "Star":
       return <FaStar />;
     default:
       return <FaExternalLinkAlt />;

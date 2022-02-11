@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { theme } from './theme';
-import media from './media';
+import styled from "styled-components";
+import { theme } from "./theme";
+import media from "./media";
 const { fonts } = theme;
 
 const Subheading = styled.h2`

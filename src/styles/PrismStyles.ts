@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import { theme } from './theme';
+import { css } from "styled-components";
+import { theme } from "./theme";
 
 const { fontSizes, fonts } = theme;
 
@@ -14,7 +14,7 @@ const prismColors = {
   red: `#ef6b73`,
   grey: `#a2aabc`,
   comment: `#8695b799`,
-  variable: '',
+  variable: "",
 };
 
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs

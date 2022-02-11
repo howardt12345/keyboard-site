@@ -1,10 +1,10 @@
-import { css } from 'styled-components';
+import { css } from "styled-components";
 
 type tsizes = {
   [key: string]: number;
-}
+};
 
-const sizes : tsizes = {
+const sizes: tsizes = {
   giant: 1440,
   bigDesktop: 1200,
   desktop: 1000,
@@ -16,7 +16,7 @@ const sizes : tsizes = {
 };
 
 // iterate through the sizes and create a media template
-export const media = Object.keys(sizes).reduce((accumulator: any, label) => {
+const media = Object.keys(sizes).reduce((accumulator: any, label) => {
   // use em in breakpoints to work properly cross-browser and support users
   // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
   const emSize = sizes[label] / 16;

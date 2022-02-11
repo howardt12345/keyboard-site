@@ -184,14 +184,14 @@ class Nav extends Component<{ animate: boolean }> {
       () =>
         this.setState({ isMounted: true }, () => {
           window.addEventListener("scroll", () =>
-            throttle(this.handleScroll, 100)
+            throttle(this.handleScroll, 100),
           );
           window.addEventListener("resize", () =>
-            throttle(this.handleResize, 100)
+            throttle(this.handleResize, 100),
           );
           window.addEventListener("keydown", (e) => this.handleKeydown(e));
         }),
-      100
+      100,
     );
   }
 

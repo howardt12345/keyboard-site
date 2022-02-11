@@ -6,34 +6,10 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
   ],
   settings: {
     react: {
       version: "detect",
-    },
-    "import/order": [
-      "error",
-      {
-        groups: ["builtin", "external", "internal"],
-        pathGroups: [
-          {
-            pattern: "react",
-            group: "external",
-            position: "before",
-          },
-        ],
-        pathGroupsExcludedImportTypes: ["react"],
-        "newlines-between": "always",
-        alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
-        },
-      },
-    ],
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
     },
   },
   env: {
@@ -41,12 +17,12 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ["@typescript-eslint", "react", "prettier", "import"],
+  plugins: ["@typescript-eslint", "react", "prettier"],
   parserOptions: {
     project: "./tsconfig.json",
   },
   rules: {
-    // Disable prop-types as we use TypeScript for type checking
+    // Disable prop-types
     "react/prop-types": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     // Enable prettier rules
@@ -57,8 +33,7 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     // allow @ts-ignore for testing purposes
     "@typescript-eslint/ban-ts-ignore": "off",
+    // allow requires
     "@typescript-eslint/no-var-requires": "off",
-    quotes: "off",
-    "import/no-unresolved": "off",
   },
 };

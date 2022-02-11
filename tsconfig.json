@@ -31,5 +31,6 @@
       "@utils": ["utils"],
       "@utils/*": ["utils/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "public", ".cache"]
 }

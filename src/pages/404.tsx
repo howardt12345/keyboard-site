@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Layout } from '@components';
-import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
+import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { Layout } from "@components";
+import styled from "styled-components";
+import { theme, mixins, media, Main } from "@styles";
 
 const { fonts, navDelay } = theme;
 
@@ -54,7 +54,7 @@ const NotFoundPage = () => {
         )}
       </TransitionGroup>
     </Layout>
-  )
-}
+  );
+};
 
 export default NotFoundPage;

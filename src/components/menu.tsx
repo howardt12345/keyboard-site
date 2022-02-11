@@ -101,7 +101,7 @@ const Menu = ({
                   <NavListItem key={i}>
                     <NavLink to={url}>{name}</NavLink>
                   </NavListItem>
-                )
+                ),
               )}
           </NavList>
         </NavLinks>

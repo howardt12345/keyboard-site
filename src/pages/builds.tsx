@@ -1,6 +1,6 @@
 import { Layout } from "@components";
 import { Heading, Section } from "@styles";
-import * as React from "react";
+import React from "react";
 
 const BuildsPage = () => {
   return (

@@ -1,6 +1,6 @@
-import { css } from 'styled-components';
-import { theme } from './theme';
-import media from './media';
+import { css } from "styled-components";
+import { theme } from "./theme";
+import media from "./media";
 const { fontSizes, fonts } = theme;
 
 const mixins = {
@@ -58,7 +58,7 @@ const mixins = {
       }
     }
     &:after {
-      content: '';
+      content: "";
       display: block;
       width: 0;
       height: 1px;
@@ -140,7 +140,7 @@ const mixins = {
       padding-left: 30px;
       margin-bottom: 10px;
       &:before {
-        content: '▹';
+        content: "▹";
         position: absolute;
         left: 0;
         color: ${({ theme }) => theme.accent};

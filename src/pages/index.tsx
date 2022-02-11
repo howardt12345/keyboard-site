@@ -1,5 +1,5 @@
 import { navigate } from "gatsby";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 // markup
 const IndexPage = () => {

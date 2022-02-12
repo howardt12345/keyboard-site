@@ -1,16 +1,15 @@
-import { navigate } from "gatsby";
-import { useEffect } from "react";
+import { Layout } from "@components";
+import { Heading, Section } from "@styles";
+import React from "react";
 
-// markup
 const IndexPage = () => {
-  useEffect(() => {
-    navigate("/designs/", {
-      state: {
-        animate: true,
-      },
-    });
-  }, []);
-  return null;
+  return (
+    <Layout animateNav={false} isHome={false} footer={true}>
+      <Section>
+        <Heading>More</Heading>
+      </Section>
+    </Layout>
+  );
 };
 
 export default IndexPage;

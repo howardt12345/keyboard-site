@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "gatsby";
+import Link from "next/link";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { throttle } from "throttle-typescript";
 import config from "@config";
@@ -17,7 +17,7 @@ const StyledContainer = styled.header<{
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.colors.background};
   transition: ${theme.transition};
   z-index: 11;
   filter: none !important;
@@ -42,14 +42,14 @@ const StyledNav = styled.nav`
   ${mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-family: ${fonts.Raleway};
   counter-reset: item 0;
   z-index: 12;
 `;
 const StyledTitle = styled.h2`
   font-size: ${fontSizes.xxl};
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => theme.colors.textPrimary};
   font-family: ${fonts.Poppins};
   font-weight: normal;
   padding: 0;
@@ -58,23 +58,23 @@ const StyledTitle = styled.h2`
   ${media.tablet`display: none;`};
 `;
 const StyledLogo = styled.div`
-  color: ${({ theme }) => theme.accent};
-  fill: ${({ theme }) => theme.accent};
+  colo: r ${({ theme }) => theme.colors.accent};
+  fill: ${({ theme }) => theme.colors.accent};
   ${mixins.flexCenter};
   a {
     display: none;
     ${media.tablet`display: block;`};
-    fill: ${({ theme }) => theme.accent};
+    fill: ${({ theme }) => theme.colors.accent};
     width: 42px;
     height: 42px;
     &:hover,
     &:focus {
       svg {
-        fill: ${({ theme }) => theme.translucent_accent};
+        fill: ${({ theme }) => theme.colors.translucent_accent};
       }
     }
     svg {
-      fill: ${({ theme }) => theme.accent};
+      fill: ${({ theme }) => theme.colors.accent};
       transition: ${theme.transition};
       user-select: none;
     }
@@ -103,7 +103,7 @@ const StyledHamburgerBox = styled.div`
   height: 24px;
 `;
 const StyledHamburgerInner = styled.div<{ menuOpen: boolean }>`
-  background-color: ${({ theme }) => theme.accent};
+  background-color: ${({ theme }) => theme.colors.accent};
   position: absolute;
   width: ${theme.hamburgerWidth}px;
   height: 2px;
@@ -123,7 +123,7 @@ const StyledHamburgerInner = styled.div<{ menuOpen: boolean }>`
   &:after {
     content: "";
     display: block;
-    background-color: ${({ theme }) => theme.accent};
+    background-color: ${({ theme }) => theme.colors.accent};
     position: absolute;
     left: auto;
     right: 0;
@@ -184,14 +184,14 @@ class Nav extends Component<{ animate: boolean }> {
       () =>
         this.setState({ isMounted: true }, () => {
           window.addEventListener("scroll", () =>
-            throttle(this.handleScroll, 100),
+            throttle(this.handleScroll, 100)
           );
           window.addEventListener("resize", () =>
-            throttle(this.handleResize, 100),
+            throttle(this.handleResize, 100)
           );
           window.addEventListener("keydown", (e) => this.handleKeydown(e));
         }),
-      100,
+      100
     );
   }
 
@@ -257,7 +257,7 @@ class Nav extends Component<{ animate: boolean }> {
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledTitle>
-                  <StyledListLink to={"/"}>
+                  <StyledListLink href={"/"}>
                     {config.siteTitle.toUpperCase()}
                   </StyledListLink>
                 </StyledTitle>
@@ -270,12 +270,12 @@ class Nav extends Component<{ animate: boolean }> {
                 <StyledLogo>
                   {animate ? (
                     <a href="/" aria-label="home">
-                      <IconLogo />
+                    <IconLogo />
                     </a>
                   ) : (
-                    <Link to="/" aria-label="home">
+                    <a href="/" aria-label="home">
                       <IconLogo />
-                    </Link>
+                    </a>
                   )}
                 </StyledLogo>
               </CSSTransition>
@@ -312,7 +312,7 @@ class Nav extends Component<{ animate: boolean }> {
                           transitionDelay: `${animate ? i * 100 : 0}ms`,
                         }}
                       >
-                        <StyledListLink to={url}>{name}</StyledListLink>
+                        <StyledListLink href={url}>{name}</StyledListLink>
                       </StyledListItem>
                     </CSSTransition>
                   ))}

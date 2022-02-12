@@ -3,22 +3,22 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import config from "@config";
-import favicon from "@images/favicons/favicon.ico";
-import ogImage from "@images/og.png";
-import appleIcon57x57 from "@images/favicons/apple-icon-57x57.png";
-import appleIcon60x60 from "@images/favicons/apple-icon-60x60.png";
-import appleIcon72x72 from "@images/favicons/apple-icon-72x72.png";
-import appleIcon76x76 from "@images/favicons/apple-icon-76x76.png";
-import appleIcon114x114 from "@images/favicons/apple-icon-114x114.png";
-import appleIcon120x120 from "@images/favicons/apple-icon-120x120.png";
-import appleIcon144x144 from "@images/favicons/apple-icon-144x144.png";
-import appleIcon152x152 from "@images/favicons/apple-icon-152x152.png";
-import appleIcon180x180 from "@images/favicons/apple-icon-180x180.png";
-import androidIcon192x192 from "@images/favicons/android-icon-192x192.png";
-import favicon32x32 from "@images/favicons/favicon-32x32.png";
-import favicon96x96 from "@images/favicons/favicon-96x96.png";
-import favicon16x16 from "@images/favicons/favicon-16x16.png";
-import msIcon144x144 from "@images/favicons/ms-icon-144x144.png";
+const favicon = "@images/favicons/favicon.ico";
+const ogImage = "@images/og.png";
+const appleIcon57x57 = "@images/favicons/apple-icon-57x57.png";
+const appleIcon60x60 = "@images/favicons/apple-icon-60x60.png";
+const appleIcon72x72 = "@images/favicons/apple-icon-72x72.png";
+const appleIcon76x76 = "@images/favicons/apple-icon-76x76.png";
+const appleIcon114x114 = "@images/favicons/apple-icon-114x114.png";
+const appleIcon120x120 = "@images/favicons/apple-icon-120x120.png";
+const appleIcon144x144 = "@images/favicons/apple-icon-144x144.png";
+const appleIcon152x152 = "@images/favicons/apple-icon-152x152.png";
+const appleIcon180x180 = "@images/favicons/apple-icon-180x180.png";
+const androidIcon192x192 = "@images/favicons/android-icon-192x192.png";
+const favicon32x32 = "@images/favicons/favicon-32x32.png";
+const favicon96x96 = "@images/favicons/favicon-96x96.png";
+const favicon16x16 = "@images/favicons/favicon-16x16.png";
+const msIcon144x144 = "@images/favicons/ms-icon-144x144.png";
 
 const Head = ({ metadata }: { metadata: any }) => (
   <Helmet>

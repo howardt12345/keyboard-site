@@ -4,7 +4,6 @@ import media from "./media";
 import mixins from "./mixins";
 import FontFaces from "./fonts";
 import TransitionStyles from "./TransitionStyles";
-import PrismStyles from "./PrismStyles";
 
 const { fontSizes, fonts } = themeValues;
 
@@ -26,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.textPrimary};
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.textPrimary};
     line-height: 1.3;
     font-family: ${fonts.Poppins};
     font-size: ${fontSizes.xl};
@@ -58,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     font-weight: 600;
-    color: ${({ theme }) => theme.textSecondary};
+    color: ${({ theme }) => theme.colors.textSecondary};
     margin: 0 0 10px 0;
   }
   h1 {
@@ -104,7 +103,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.accent};
+      color: ${({ theme }) => theme.colors.accent};
     }
   }
   button {
@@ -113,7 +112,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 0;
     &:focus,
     &:active {
-      outline-color: ${({ theme }) => theme.accent};
+      outline-color: ${({ theme }) => theme.colors.accent};
     }
   }
   input, textarea {
@@ -137,8 +136,8 @@ const GlobalStyle = createGlobalStyle`
       ${mixins.inlineLink};
     }
     & > code {
-      background-color: ${({ theme }) => theme.background};
-      color: ${({ theme }) => theme.background};
+      background-color: ${({ theme }) => theme.colors.background};
+      color: ${({ theme }) => theme.colors.background};
       font-size: ${fontSizes.sm};
       border-radius: ${themeValues.borderRadius};
       padding: 0.3em 0.5em;
@@ -158,13 +157,13 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: ${({ theme }) => theme.accent};
+          color: ${({ theme }) => theme.colors.accent};
         }
       }
     }
   }
   blockquote {
-    border-left-color: ${({ theme }) => theme.accent};
+    border-left-color: ${({ theme }) => theme.colors.accent};
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -176,7 +175,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   hr {
-    background-color: ${({ theme }) => theme.background};
+    background-color: ${({ theme }) => theme.colors.background};
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -189,16 +188,16 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizes.md};
   }
   #logo {
-    color: ${({ theme }) => theme.accent};
+    color: ${({ theme }) => theme.colors.accent};
   }
   .overline {
-    color: ${({ theme }) => theme.accent};
+    color: ${({ theme }) => theme.colors.accent};
     font-family: ${fonts.Raleway};
     font-size: ${fontSizes.md};
     font-weight: normal;
   }
   .subtitle {
-    color: ${({ theme }) => theme.accent};
+    color: ${({ theme }) => theme.colors.accent};
     margin: 0 0 20px 0;
     font-size: ${fontSizes.md};
     font-family: ${fonts.Poppins};
@@ -215,7 +214,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: ${({ theme }) => theme.accent};
+    color: ${({ theme }) => theme.colors.accent};
     .arrow {
       display: block;
       margin-right: 10px;
@@ -231,11 +230,7 @@ const GlobalStyle = createGlobalStyle`
       letter-spacing: 0.1em;
     }
   }
-  .gatsby-image-outer-wrapper {
-    height: 100%;
-  }
   ${TransitionStyles};
-  ${PrismStyles};
 `;
 
 export default GlobalStyle;

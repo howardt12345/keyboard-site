@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import Link from 'next/link';
 import config from "@config";
 import styled from "styled-components";
 import { theme, mixins, media } from "@styles";
@@ -28,7 +28,7 @@ const StyledContainer = styled.div<Props>`
 const Sidebar = styled.aside`
   ${mixins.flexCenter};
   flex-direction: column;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.colors.background_secondary};
   padding: 50px;
   width: 50vw;
   height: 100%;
@@ -36,7 +36,7 @@ const Sidebar = styled.aside`
   right: 0;
   margin-left: auto;
   font-family: ${fonts.Raleway};
-  box-shadow: -10px 0px 30px -15px ${({ theme }) => theme.translucent_bg};
+  box-shadow: -10px 0px 30px -15px ${({ theme }) => theme.colors.shadow_bg};
   ${media.thone`padding: 25px;`};
   ${media.phablet`width: 75vw;`};
   ${media.tiny`padding: 10px;`};
@@ -46,7 +46,7 @@ const NavLinks = styled.nav`
   width: 100%;
   flex-direction: column;
   text-align: center;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => theme.colors.textSecondary};
 `;
 const NavList = styled.ol`
   padding: 0;
@@ -99,9 +99,9 @@ const Menu = ({
               config.navLinks.map(
                 ({ url, name }: any, i: React.Key | null | undefined) => (
                   <NavListItem key={i}>
-                    <NavLink to={url}>{name}</NavLink>
+                    <NavLink href={url}>{name}</NavLink>
                   </NavListItem>
-                ),
+                )
               )}
           </NavList>
         </NavLinks>

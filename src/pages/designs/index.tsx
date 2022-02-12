@@ -2,13 +2,9 @@ import { Layout } from "@components";
 import { Heading, Section } from "@styles";
 import React from "react";
 
-const DesignsPage = ({ location }: { location: any }) => {
+const DesignsPage = () => {
   return (
-    <Layout
-      animateNav={location.state?.animate ?? false}
-      isHome={false}
-      footer={true}
-    >
+    <Layout animateNav={false} isHome={false} footer={true}>
       <Section>
         <Heading>Designs</Heading>
       </Section>

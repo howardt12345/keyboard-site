@@ -6,7 +6,7 @@ const { fonts } = theme;
 const Heading = styled.h1`
   text-align: left;
   font-family: ${fonts.Poppins};
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => theme.colors.textPrimary};
   font-size: 64px;
   font-weight: 400;
   ${media.bigDesktop`font-size: 64px;`};

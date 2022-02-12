@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import { useStyledDarkMode } from "gatsby-styled-components-dark-mode";
+import { ThemeContext } from "@api/ThemeProvider";
 
 import { FormattedIcon } from "@components/icons";
 
@@ -16,11 +16,11 @@ const StyledLink = styled.a`
   }
 `;
 const ToggleButton = () => {
-  const { isDark, toggleDark } = useStyledDarkMode();
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <StyledLink onClick={() => toggleDark()}>
-      <FormattedIcon name={!isDark ? "light" : "dark"} />
+    <StyledLink onClick={() => toggleTheme()}>
+      <FormattedIcon name={isDarkTheme ? "dark" : "light"} />
     </StyledLink>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
+import Link from 'next/link';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Layout } from "@components";
 import styled from "styled-components";
@@ -12,7 +12,7 @@ const StyledMainContainer = styled(Main)`
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => theme.colors.textPrimary};
   font-family: ${fonts.Poppins};
   font-size: 12vw;
   line-height: 1;
@@ -48,7 +48,7 @@ const NotFoundPage = () => {
             <StyledMainContainer className="fillHeight">
               <StyledTitle>404</StyledTitle>
               <StyledSubtitle>Page Not Found</StyledSubtitle>
-              <StyledHomeButton to="/">Go Home</StyledHomeButton>
+              <StyledHomeButton href="/">Go Home</StyledHomeButton>
             </StyledMainContainer>
           </CSSTransition>
         )}

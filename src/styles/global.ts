@@ -4,7 +4,6 @@ import media from "./media";
 import mixins from "./mixins";
 import FontFaces from "./fonts";
 import TransitionStyles from "./TransitionStyles";
-import PrismStyles from "./PrismStyles";
 
 const { fontSizes, fonts } = themeValues;
 
@@ -231,11 +230,7 @@ const GlobalStyle = createGlobalStyle`
       letter-spacing: 0.1em;
     }
   }
-  .gatsby-image-outer-wrapper {
-    height: 100%;
-  }
   ${TransitionStyles};
-  ${PrismStyles};
 `;
 
 export default GlobalStyle;

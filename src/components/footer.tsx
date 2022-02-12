@@ -18,7 +18,7 @@ const StyledMetadata = styled.div`
   line-height: 1;
 `;
 const StyledGitHubLink = styled.a`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => theme.colors.textSecondary};
   padding: 8px;
 `;
 

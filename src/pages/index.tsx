@@ -1,15 +1,16 @@
-import { Layout } from '@components';
-import { Heading, Section } from '@styles';
-import React from 'react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const IndexPage = () => {
-  return (
-    <Layout animateNav={false} isHome={false} footer={true}>
-      <Section>
-        <Heading>Index</Heading>
-      </Section>
-    </Layout>
-  );
+  const router = useRouter();
+  useEffect(() => {
+    const { pathname } = router;
+    if (pathname === '/') {
+      router.push('/designs');
+    }
+  }, []);
+
+  return null;
 };
 
 export default IndexPage;

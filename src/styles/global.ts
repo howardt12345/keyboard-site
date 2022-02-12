@@ -1,9 +1,9 @@
-import { createGlobalStyle } from "styled-components";
-import { theme as themeValues } from "./theme";
-import media from "./media";
-import mixins from "./mixins";
-import FontFaces from "./fonts";
-import TransitionStyles from "./TransitionStyles";
+import { createGlobalStyle } from 'styled-components';
+import { theme as themeValues } from './theme';
+import media from './media';
+import mixins from './mixins';
+import FontFaces from './fonts';
+import TransitionStyles from './TransitionStyles';
 
 const { fontSizes, fonts } = themeValues;
 

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { theme } from "./theme";
+import styled from 'styled-components';
+import { theme } from './theme';
 const { fontSizes, fonts } = theme;
 
 const Button = styled.button`
@@ -8,7 +8,7 @@ const Button = styled.button`
   border-radius: ${theme.borderRadius};
   font-size: ${fontSizes.smish};
   font-family: ${fonts.Raleway};
-  color: ${({ theme }) => theme.accent};
+  color: ${({ theme }) => theme.colors.accent};
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
@@ -17,7 +17,7 @@ const Button = styled.button`
   &:hover,
   &:focus,
   &:active {
-    background-color: ${({ theme }) => theme.translucent_accent};
+    background-color: ${({ theme }) => theme.colors.translucent_accent};
     outline: none;
   }
   &:after {

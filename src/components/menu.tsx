@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import Link from 'next/link';
-import config from "@config";
-import styled from "styled-components";
-import { theme, mixins, media } from "@styles";
+import config from '@config';
+import styled from 'styled-components';
+import { theme, mixins, media } from '@styles';
 
 const { fontSizes, fonts } = theme;
 
@@ -21,7 +21,7 @@ const StyledContainer = styled.div<Props>`
   outline: 0;
   transition: ${theme.transition};
   transform: translateX(${(props) => (props.menuOpen ? 0 : 100)}vw);
-  visibility: ${(props) => (props.menuOpen ? "visible" : "hidden")};
+  visibility: ${(props) => (props.menuOpen ? 'visible' : 'hidden')};
   display: none;
   ${media.tablet`display: block;`};
 `;
@@ -76,9 +76,9 @@ const Menu = ({
 }) => {
   const handleMenuClick = (e: { target: any }) => {
     const target = e.target;
-    const isLink = target.hasAttribute("href");
+    const isLink = target.hasAttribute('href');
     const isNotMenu =
-      target.classList && target.classList[0].includes("StyledContainer");
+      target.classList && target.classList[0].includes('StyledContainer');
 
     if (isLink || isNotMenu) {
       toggleMenu();
@@ -101,7 +101,7 @@ const Menu = ({
                   <NavListItem key={i}>
                     <NavLink href={url}>{name}</NavLink>
                   </NavListItem>
-                )
+                ),
               )}
           </NavList>
         </NavLinks>

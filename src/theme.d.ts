@@ -12,6 +12,6 @@ declare module 'styled-components' {
       textBody: string;
       translucent_accent: string;
       shadow_bg: string;
-    }
+    };
   }
 }

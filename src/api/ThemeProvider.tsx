@@ -1,6 +1,6 @@
-import React, { createContext, useState } from "react";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { theme_dark, theme_light } from "@styles";
+import React, { createContext, useState } from 'react';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { theme_dark, theme_light } from '@styles';
 
 export const ThemeContext = createContext({
   isDarkTheme: true,

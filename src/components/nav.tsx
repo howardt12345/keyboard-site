@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import Link from "next/link";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { throttle } from "throttle-typescript";
-import config from "@config";
-import { Menu, ToggleButton } from "@components";
-import { IconLogo } from "@components/icons";
-import styled from "styled-components";
-import { theme, mixins, media } from "@styles";
+import React, { Component } from 'react';
+import Link from 'next/link';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { throttle } from 'throttle-typescript';
+import config from '@config';
+import { Menu, ToggleButton } from '@components';
+import { IconLogo } from '@components/icons';
+import styled from 'styled-components';
+import { theme, mixins, media } from '@styles';
 
 const { fontSizes, fonts, loaderDelay } = theme;
 
@@ -25,15 +25,15 @@ const StyledContainer = styled.header<{
   user-select: auto !important;
   width: 100%;
   height: ${(props) =>
-    props.scrollDirection === "none" ? theme.navHeight : theme.navScrollHeight};
+    props.scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight};
   box-shadow: ${(props) =>
-    props.scrollDirection === "up"
+    props.scrollDirection === 'up'
       ? `0 10px 30px -10px ${({ theme }: { theme: any }) =>
           theme.translucent_bg}`
-      : "none"};
+      : 'none'};
   transform: translateY(
     ${(props) =>
-      props.scrollDirection === "down" ? `-${theme.navScrollHeight}` : "0px"}
+      props.scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px'}
   );
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
@@ -121,7 +121,7 @@ const StyledHamburgerInner = styled.div<{ menuOpen: boolean }>`
   );
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: block;
     background-color: ${({ theme }) => theme.colors.accent};
     position: absolute;
@@ -175,7 +175,7 @@ class Nav extends Component<{ animate: boolean }> {
   state = {
     isMounted: !this.props.animate,
     menuOpen: false,
-    scrollDirection: "none",
+    scrollDirection: 'none',
     lastScrollTop: 0,
   };
 
@@ -183,22 +183,22 @@ class Nav extends Component<{ animate: boolean }> {
     setTimeout(
       () =>
         this.setState({ isMounted: true }, () => {
-          window.addEventListener("scroll", () =>
-            throttle(this.handleScroll, 100)
+          window.addEventListener('scroll', () =>
+            throttle(this.handleScroll, 100),
           );
-          window.addEventListener("resize", () =>
-            throttle(this.handleResize, 100)
+          window.addEventListener('resize', () =>
+            throttle(this.handleResize, 100),
           );
-          window.addEventListener("keydown", (e) => this.handleKeydown(e));
+          window.addEventListener('keydown', (e) => this.handleKeydown(e));
         }),
-      100
+      100,
     );
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", () => this.handleScroll());
-    window.removeEventListener("resize", () => this.handleResize());
-    window.removeEventListener("keydown", (e) => this.handleKeydown(e));
+    window.removeEventListener('scroll', () => this.handleScroll());
+    window.removeEventListener('resize', () => this.handleResize());
+    window.removeEventListener('keydown', (e) => this.handleKeydown(e));
   }
 
   toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
@@ -213,14 +213,14 @@ class Nav extends Component<{ animate: boolean }> {
     }
 
     if (fromTop < DELTA) {
-      this.setState({ scrollDirection: "none" });
+      this.setState({ scrollDirection: 'none' });
     } else if (fromTop > lastScrollTop && fromTop > config.navHeight) {
-      if (scrollDirection !== "down") {
-        this.setState({ scrollDirection: "down" });
+      if (scrollDirection !== 'down') {
+        this.setState({ scrollDirection: 'down' });
       }
     } else if (fromTop + window.innerHeight < document.body.scrollHeight) {
-      if (scrollDirection !== "up") {
-        this.setState({ scrollDirection: "up" });
+      if (scrollDirection !== 'up') {
+        this.setState({ scrollDirection: 'up' });
       }
     }
 
@@ -238,7 +238,7 @@ class Nav extends Component<{ animate: boolean }> {
       return;
     }
 
-    if (e.which === 27 || e.key === "Escape") {
+    if (e.which === 27 || e.key === 'Escape') {
       this.toggleMenu();
     }
   };
@@ -247,8 +247,8 @@ class Nav extends Component<{ animate: boolean }> {
     const { isMounted, menuOpen, scrollDirection } = this.state;
     const { animate } = this.props;
     const timeout = animate ? loaderDelay : 0;
-    const fadeClass = animate ? "fade" : "";
-    const fadeDownClass = animate ? "fadedown" : "";
+    const fadeClass = animate ? 'fade' : '';
+    const fadeDownClass = animate ? 'fadedown' : '';
 
     return (
       <StyledContainer scrollDirection={scrollDirection}>
@@ -257,7 +257,7 @@ class Nav extends Component<{ animate: boolean }> {
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledTitle>
-                  <StyledListLink href={"/"}>
+                  <StyledListLink href={'/'}>
                     {config.siteTitle.toUpperCase()}
                   </StyledListLink>
                 </StyledTitle>
@@ -269,11 +269,11 @@ class Nav extends Component<{ animate: boolean }> {
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledLogo>
                   {animate ? (
-                    <a href="/" aria-label="home">
-                    <IconLogo />
+                    <a href='/' aria-label='home'>
+                      <IconLogo />
                     </a>
                   ) : (
-                    <a href="/" aria-label="home">
+                    <a href='/' aria-label='home'>
                       <IconLogo />
                     </a>
                   )}

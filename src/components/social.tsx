@@ -1,7 +1,7 @@
-import React from "react";
-import config from "@config";
-import { IconButton } from "@components";
-import styled from "styled-components";
+import React from 'react';
+import config from '@config';
+import { IconButton } from '@components';
+import styled from 'styled-components';
 
 const StyledList = styled.ul`
   height: 40px;
@@ -11,7 +11,7 @@ const StyledList = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
 const Social = () => (

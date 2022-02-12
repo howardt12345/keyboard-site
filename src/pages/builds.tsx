@@ -1,6 +1,6 @@
-import { Layout } from "@components";
-import { Heading, Section } from "@styles";
-import React from "react";
+import { Layout } from '@components';
+import { Heading, Section } from '@styles';
+import React from 'react';
 
 const BuildsPage = () => {
   return (

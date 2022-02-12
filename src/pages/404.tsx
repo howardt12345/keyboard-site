@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { Layout } from "@components";
-import styled from "styled-components";
-import { theme, mixins, media, Main } from "@styles";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Layout } from '@components';
+import styled from 'styled-components';
+import { theme, mixins, media, Main } from '@styles';
 
 const { fonts, navDelay } = theme;
 
@@ -44,11 +44,11 @@ const NotFoundPage = () => {
     <Layout isHome={false} animateNav={true} footer={true}>
       <TransitionGroup component={null}>
         {isMounted && (
-          <CSSTransition timeout={500} classNames="fade">
-            <StyledMainContainer className="fillHeight">
+          <CSSTransition timeout={500} classNames='fade'>
+            <StyledMainContainer className='fillHeight'>
               <StyledTitle>404</StyledTitle>
               <StyledSubtitle>Page Not Found</StyledSubtitle>
-              <StyledHomeButton href="/">Go Home</StyledHomeButton>
+              <StyledHomeButton href='/'>Go Home</StyledHomeButton>
             </StyledMainContainer>
           </CSSTransition>
         )}

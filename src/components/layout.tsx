@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { Nav, Footer } from "@components";
-import styled from "styled-components";
+import React, { useEffect } from 'react';
+import { Nav, Footer } from '@components';
+import styled from 'styled-components';
 
 const StyledContent = styled.div`
   display: flex;
@@ -21,21 +21,21 @@ const Layout = ({
 }) => {
   useEffect(() => {
     function preventRightClick(e: any) {
-      if (e.target.tagName === "IMG") {
+      if (e.target.tagName === 'IMG') {
         e.preventDefault();
         e.stopPropagation();
       }
     }
 
-    document.addEventListener("contextmenu", preventRightClick);
-    return () => document.removeEventListener("contextmenu", preventRightClick);
+    document.addEventListener('contextmenu', preventRightClick);
+    return () => document.removeEventListener('contextmenu', preventRightClick);
   });
 
   return (
-    <div id="root">
+    <div id='root'>
       <StyledContent>
         {!isHome ? <Nav animate={animateNav} /> : <br />}
-        <div id="content">
+        <div id='content'>
           {children}
           {footer && <Footer />}
         </div>

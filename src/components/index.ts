@@ -6,3 +6,4 @@ export { default as Menu } from './menu';
 export { default as Head } from './head';
 export { default as IconButton } from './iconbutton';
 export { default as ToggleButton } from './toggle_button';
+export { default as Card } from './card';

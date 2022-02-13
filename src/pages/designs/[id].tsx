@@ -1,6 +1,7 @@
 import { Layout } from '@components';
 import { getAllDesignIds, getDesignData, IDesignData } from '@lib/designs';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import Image from "next/image"
 import { Heading, Section } from '@styles';
 
 export default function Design({
@@ -14,6 +15,7 @@ export default function Design({
     <Layout isHome={false} animateNav={false} footer={false}>
       <Section>
         <Heading>{designData.name}</Heading>
+        <Image src={`/content/designs/${designData.img}`} alt={designData.name} width="600" height="400"/>
         <div dangerouslySetInnerHTML={{ __html: designData.contentHtml }} />
       </Section>
     </Layout>

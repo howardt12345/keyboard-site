@@ -4,13 +4,14 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
-const designsDirectory = path.join(process.cwd(), 'content/designs')
+const designsDirectory = path.join(process.cwd(), 'public/content/designs')
 
 export interface IDesignData {
   name: string;
-  repo: string;
-  firmware: string;
+  repo?: string;
+  firmware?: string;
   date: string;
+  img?: string;
 }
 
 export function getSortedDesignsData() {

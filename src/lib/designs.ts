@@ -6,6 +6,13 @@ import html from 'remark-html'
 
 const designsDirectory = path.join(process.cwd(), 'content/designs')
 
+export interface IDesignData {
+  name: string;
+  repo: string;
+  firmware: string;
+  date: string;
+}
+
 export function getSortedDesignsData() {
   // Get file names under /designs
   const fileNames = fs.readdirSync(designsDirectory)
@@ -64,6 +71,6 @@ export async function getDesignData(id: string) {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string })
+    ...(matterResult.data as IDesignData)
   }
 }

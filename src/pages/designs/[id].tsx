@@ -1,23 +1,20 @@
 import { Layout } from '@components';
-import { getAllDesignIds, getDesignData } from '@lib/designs';
-import Head from 'next/head';
+import { getAllDesignIds, getDesignData, IDesignData } from '@lib/designs';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { Heading, Section } from '@styles';
 
-export default function Post({
-  postData,
+export default function Design({
+  designData,
 }: {
-  postData: {
-    name: string;
-    date: string;
+  designData: IDesignData & {
     contentHtml: string;
   };
 }) {
   return (
     <Layout isHome={false} animateNav={false} footer={false}>
       <Section>
-        <Heading>{postData.name}</Heading>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Heading>{designData.name}</Heading>
+        <div dangerouslySetInnerHTML={{ __html: designData.contentHtml }} />
       </Section>
     </Layout>
   );
@@ -32,10 +29,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getDesignData(params?.id as string);
+  const designData = await getDesignData(params?.id as string);
   return {
     props: {
-      postData,
+      designData,
     },
   };
 };

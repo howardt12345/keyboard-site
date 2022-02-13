@@ -41,7 +41,10 @@ const StyledContainer = styled.header<{
 const StyledNav = styled.nav`
   ${mixins.flexBetween};
   position: relative;
-  width: 100%;
+  width: 90vw;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
   color: ${({ theme }) => theme.colors.textSecondary};
   font-family: ${fonts.Raleway};
   counter-reset: item 0;

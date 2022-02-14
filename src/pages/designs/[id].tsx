@@ -45,7 +45,7 @@ export default function Design({
   };
 }) {
   return (
-    <Layout isHome={false} animateNav={false} footer={false}>
+    <Layout isHome={false} animateNav={false} footer={true}>
       <Section>
         <Heading>{designData.name}</Heading>
         <StyledContainer>

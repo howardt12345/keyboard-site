@@ -5,7 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 
 const dir = '/content/designs';
-const designsDirectory = path.join('./public', dir);
+const designsDirectory = path.join('public', dir);
 
 export interface IDesignData {
   id: string;

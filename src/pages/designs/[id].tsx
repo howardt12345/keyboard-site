@@ -2,7 +2,40 @@ import { Layout } from '@components';
 import { getAllDesignIds, getDesignData, IDesignData } from '@lib/designs';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
-import { Heading, Section } from '@styles';
+import { FlexContainer, Heading, media, Section } from '@styles';
+import styled from 'styled-components';
+import React from 'react';
+
+const StyledContainer = styled(FlexContainer)`
+  margin-top: 1rem;
+`;
+
+const StyledInfoSection = styled.div`
+  margin-top: 0;
+  margin-left: 1rem;
+  ${media.desktop`margin-top: 1rem; margin-left: 0;`};
+  width: 35%;
+  ul {
+    margin-block-start: 0px;
+    margin-block-end: 0.5em;
+  }
+  li {
+    color: ${({ theme }) => theme.colors.textPrimary};
+    font-weight: 300;
+  }
+  p {
+    margin-block-end: 0.25em;
+    color: ${({ theme }) => theme.colors.textPrimary};
+    font-weight: 300;
+  }
+  strong {
+    color: ${({ theme }) => theme.colors.textPrimary};
+  }
+`;
+
+const StyledImage = styled(Image)`
+  width: 60%;
+`;
 
 export default function Design({
   designData,
@@ -15,13 +48,17 @@ export default function Design({
     <Layout isHome={false} animateNav={false} footer={false}>
       <Section>
         <Heading>{designData.name}</Heading>
-        <Image
-          src={`${designData.path}/${designData.id}/${designData.img}`}
-          alt={designData.name}
-          width='600'
-          height='400'
-        />
-        <div dangerouslySetInnerHTML={{ __html: designData.contentHtml }} />
+        <StyledContainer>
+          <StyledImage
+            src={`${designData.path}/${designData.id}/${designData.img}`}
+            alt={designData.name}
+            width='600'
+            height='400'
+          />
+          <StyledInfoSection
+            dangerouslySetInnerHTML={{ __html: designData.contentHtml }}
+          />
+        </StyledContainer>
       </Section>
     </Layout>
   );

@@ -29,6 +29,7 @@ const DesignsPage = ({ allDesignsData }: { allDesignsData: IDesignData[] }) => {
               title={design.name}
               src={`${design.path}/${design.id}/${design.img}`}
               path={`/designs/${design.id}`}
+              key={`${design.path}/${design.id}`}
             ></Card>
           ))}
         </DesignGrid>

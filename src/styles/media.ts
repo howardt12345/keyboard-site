@@ -7,7 +7,7 @@ type tsizes = {
 const sizes: tsizes = {
   giant: 1440,
   bigDesktop: 1200,
-  desktop: 1000,
+  desktop: 960,
   tablet: 768,
   thone: 600,
   phablet: 480,

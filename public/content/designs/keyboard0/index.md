@@ -8,22 +8,20 @@ date: "2022-01-30"
 
 **Layout:** TKL + left macro column
 
-**MCU**:
-
+**MCU:**
 - p2: STM32F303CBT6
 
-**Firmware**: QMK, VIA, Vial
+**Firmware:** QMK, VIA, Vial
 
-**Case**: Currently undetermined
+**Case:** Currently undetermined
 
-**Features**:
-
+**Features:**
 - 2 Rotary Encoders
 - OLED display
 - Per-key RGB matrix lighting
 - Daughterboard support
 - Hotswap ANSI layout
 
-**Availability**: Limited prototype quantities
+**Availability:** Limited prototype quantities
 
-**Versions**: p2
+**Versions:** p2

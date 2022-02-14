@@ -1,6 +1,25 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
+import { theme, mixins, media } from '@styles';
+
+const { fontSizes, fonts, loaderDelay } = theme;
+
+const StyledCard = styled.div`
+  border: 1px solid ${({ theme }) => theme.colors.textSecondary};
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledTitle = styled.h4`
+  text-align: center;
+  font-family: ${fonts.Poppins};
+  color: ${({ theme }) => theme.colors.textPrimary};
+`;
 
 export interface ICardProps {
   title: string;
@@ -10,19 +29,19 @@ export interface ICardProps {
 
 const Card = (props: ICardProps) => {
   return (
-    <div>
+    <StyledCard>
       <Link href={props.path}>
         <a>
           <Image
             src={props.src}
             alt={props.title}
-            width='300'
-            height='200'
+            width='600'
+            height='400'
           ></Image>
-          <h3>{props.title}</h3>
+          <StyledTitle>{props.title}</StyledTitle>
         </a>
       </Link>
-    </div>
+    </StyledCard>
   );
 };
 

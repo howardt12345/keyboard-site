@@ -17,7 +17,7 @@ date: "2022-01-30"
 
 **Features:**
 - 2 Rotary Encoders
-- OLED display
+- 128x32 OLED display
 - Per-key RGB matrix lighting
 - Daughterboard support
 - Hotswap ANSI layout

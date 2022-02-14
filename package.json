@@ -18,6 +18,8 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-transition-group": "^4.4.2",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
     "scrollreveal": "^4.0.9",
     "styled-components": "^5.3.3",
     "throttle-typescript": "^1.1.0"

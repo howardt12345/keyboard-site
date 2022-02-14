@@ -41,7 +41,10 @@ const StyledContainer = styled.header<{
 const StyledNav = styled.nav`
   ${mixins.flexBetween};
   position: relative;
-  width: 100%;
+  width: 90vw;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
   color: ${({ theme }) => theme.colors.textSecondary};
   font-family: ${fonts.Raleway};
   counter-reset: item 0;
@@ -269,10 +272,12 @@ class Nav extends Component<{ animate: boolean }> {
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledLogo>
                   {animate ? (
+                    // eslint-disable-next-line @next/next/no-html-link-for-pages
                     <a href='/' aria-label='home'>
                       <IconLogo />
                     </a>
                   ) : (
+                    // eslint-disable-next-line @next/next/no-html-link-for-pages
                     <a href='/' aria-label='home'>
                       <IconLogo />
                     </a>

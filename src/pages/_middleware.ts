@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   switch (url.pathname) {
     case '/':
       url.pathname = '/designs';
-      url.search = "home=true";
+      url.search = 'home=true';
       return NextResponse.redirect(url);
     default:
       return NextResponse.next();

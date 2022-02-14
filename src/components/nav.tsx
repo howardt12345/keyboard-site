@@ -272,10 +272,12 @@ class Nav extends Component<{ animate: boolean }> {
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledLogo>
                   {animate ? (
+                    // eslint-disable-next-line @next/next/no-html-link-for-pages
                     <a href='/' aria-label='home'>
                       <IconLogo />
                     </a>
                   ) : (
+                    // eslint-disable-next-line @next/next/no-html-link-for-pages
                     <a href='/' aria-label='home'>
                       <IconLogo />
                     </a>

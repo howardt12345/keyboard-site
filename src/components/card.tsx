@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
-import { theme, mixins, media } from '@styles';
+import React from 'react';
+import { theme } from '@styles';
 
-const { fontSizes, fonts, loaderDelay } = theme;
+const { fonts } = theme;
 
 const StyledCard = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.textSecondary};

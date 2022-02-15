@@ -6,7 +6,36 @@ module.exports = withFonts({
       fs: false,
       path: false,
     };
-
     return config;
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/designs?home=true',
+        permanent: true,
+      },
+      {
+        source: '/0',
+        destination: '/designs/keyboard0',
+        permanent: true,
+      },
+      {
+        source: '/np0',
+        destination: '/designs/numpad0',
+        permanent: false,
+      },
+      {
+        source: '/db0',
+        destination: '/designs/modified-daughterboard',
+        permanent: false,
+      },
+      {
+        source: '/hubdb',
+        destination: '/designs/hub-daughterboard',
+        permanent: false,
+      }
+    ];
   },
 });

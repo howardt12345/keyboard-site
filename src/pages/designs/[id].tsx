@@ -15,6 +15,13 @@ const StyledContainer = styled(FlexContainer)`
   margin-top: 1rem;
 `;
 
+export const Line = styled.hr`
+  width: 100%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.colors.textPrimary};
+  margin: 0;
+`;
+
 const StyledInfoSection = styled.div`
   margin-top: 0;
   margin-left: 1rem;
@@ -27,11 +34,13 @@ const StyledInfoSection = styled.div`
   li {
     color: ${({ theme }) => theme.colors.textPrimary};
     font-weight: 300;
+    font-size: 1.1rem;
   }
   p {
     margin-block-end: 0.25em;
     color: ${({ theme }) => theme.colors.textPrimary};
     font-weight: 300;
+    font-size: 1.1rem;
   }
   strong {
     color: ${({ theme }) => theme.colors.textPrimary};
@@ -53,6 +62,7 @@ export default function Design({
     <Layout isHome={false} animateNav={false} footer={true}>
       <Section>
         <Heading>{designData.name}</Heading>
+        <Line />
         <StyledContainer>
           <StyledImage
             src={`${designsDir}/${designData.id}/${designData.img}`}

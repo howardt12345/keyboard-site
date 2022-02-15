@@ -1,6 +1,6 @@
 import { Card, Layout } from '@components';
 import { Heading, Section } from '@styles';
-import { getSortedDesignsData, IDesignData } from '@lib/designs';
+import { designsDir, getSortedDesignsData, IDesignData } from '@lib/designs';
 import { GetStaticProps } from 'next';
 import React from 'react';
 import { useRouter } from 'next/router';
@@ -27,7 +27,7 @@ const DesignsPage = ({ allDesignsData }: { allDesignsData: IDesignData[] }) => {
           {allDesignsData.map((design) => (
             <Card
               title={design.name}
-              src={`${design.path}/${design.id}/${design.img}`}
+              src={`${designsDir}/${design.id}/${design.img}`}
               path={`/designs/${design.id}`}
               key={`${design.path}/${design.id}`}
             ></Card>

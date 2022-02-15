@@ -1,11 +1,9 @@
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const dir = '/content/designs';
-const designsDirectory = path.join(process.cwd(), 'public', dir);
+export const designsDir = '/content/designs';
 
 export interface IDesignData {
   id: string;
@@ -17,29 +15,36 @@ export interface IDesignData {
   path?: string;
 }
 
+export function getDesignsFolders() {
+  const designsFolders = fs
+    .readdirSync(`${process.cwd()}/public${designsDir}`)
+    .map((folder) => ({
+      dir: folder,
+      file: 'index.md',
+    }));
+
+  return designsFolders;
+}
+
 export function getSortedDesignsData() {
-  // Get file names under /designs
-  const fileNames = fs.readdirSync(designsDirectory);
-  const allDesignsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '');
+  // Get design folders
+  const designFolders = getDesignsFolders();
 
-    // Read markdown file as string
-    const fullPath = path.join(designsDirectory, fileName, 'index.md');
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+  // Read design data from design files
+  const designs = designFolders.map(({ dir, file }) => {
+    const fileContents = fs
+      .readFileSync(`public/content/designs/${dir}/${file}`)
+      .toString();
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+    const { data } = matter(fileContents);
 
-    // Combine the data with the id
     return {
-      id,
-      path: dir,
-      ...(matterResult.data as Omit<IDesignData, 'id'>),
+      id: dir,
+      ...(data as Omit<IDesignData, 'id'>),
     };
   });
-  // Sort designs by date
-  return allDesignsData.sort((a, b) => {
+
+  return designs.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
@@ -49,7 +54,7 @@ export function getSortedDesignsData() {
 }
 
 export function getAllDesignIds() {
-  const fileNames = fs.readdirSync(designsDirectory);
+  const fileNames = fs.readdirSync(`${process.cwd()}/public${designsDir}`);
   return fileNames.map((fileName) => {
     return {
       params: {
@@ -60,7 +65,7 @@ export function getAllDesignIds() {
 }
 
 export async function getDesignData(id: string) {
-  const fullPath = path.join(designsDirectory, `${id}/index.md`);
+  const fullPath = `public/content/designs/${id}/index.md`;
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section
@@ -76,7 +81,6 @@ export async function getDesignData(id: string) {
   return {
     id,
     contentHtml,
-    path: dir,
     ...(matterResult.data as Omit<IDesignData, 'id'>),
   };
 }

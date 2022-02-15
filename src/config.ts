@@ -47,6 +47,10 @@ const config = {
     text2: '#7A7A7A',
     tile: '#FFFFFF',
   },
+  homeLink: {
+    name: 'Home',
+    url: '/designs?home=true',
+  },
   navLinks: [
     {
       name: 'Designs',

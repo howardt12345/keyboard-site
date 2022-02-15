@@ -260,7 +260,10 @@ class Nav extends Component<{ animate: boolean }> {
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledTitle>
-                  <StyledListLink href={'/'}>
+                  <StyledListLink
+                    href={config.homeLink.url}
+                    aria-label={config.homeLink.name}
+                  >
                     {config.siteTitle.toUpperCase()}
                   </StyledListLink>
                 </StyledTitle>
@@ -273,12 +276,18 @@ class Nav extends Component<{ animate: boolean }> {
                 <StyledLogo>
                   {animate ? (
                     // eslint-disable-next-line @next/next/no-html-link-for-pages
-                    <a href='/' aria-label='home'>
+                    <a
+                      href={config.homeLink.url}
+                      aria-label={config.homeLink.name}
+                    >
                       <IconLogo />
                     </a>
                   ) : (
                     // eslint-disable-next-line @next/next/no-html-link-for-pages
-                    <a href='/' aria-label='home'>
+                    <a
+                      href={config.homeLink.url}
+                      aria-label={config.homeLink.name}
+                    >
                       <IconLogo />
                     </a>
                   )}

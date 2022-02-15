@@ -9,6 +9,15 @@ module.exports = withFonts({
     return config;
   },
 
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/designs?home=true',
+      },
+    ];
+  },
+
   async redirects() {
     return [
       {
@@ -35,7 +44,7 @@ module.exports = withFonts({
         source: '/hubdb',
         destination: '/designs/hub-daughterboard',
         permanent: false,
-      }
+      },
     ];
   },
 });

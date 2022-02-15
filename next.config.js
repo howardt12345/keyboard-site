@@ -21,11 +21,6 @@ module.exports = withFonts({
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/designs?home=true',
-        permanent: true,
-      },
-      {
         source: '/0',
         destination: '/designs/keyboard0',
         permanent: true,

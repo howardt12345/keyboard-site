@@ -1,11 +1,9 @@
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
 const designsDir = '/content/designs';
-const designsDirectory = path.join(process.cwd(), designsDir);
 
 export interface IDesignData {
   id: string;
@@ -18,10 +16,12 @@ export interface IDesignData {
 }
 
 export function getDesignsFolders() {
-  const designsFolders = fs.readdirSync(designsDirectory).map((folder) => ({
-    dir: folder,
-    file: 'index.md',
-  }));
+  const designsFolders = fs
+    .readdirSync(`${process.cwd()}${designsDir}`)
+    .map((folder) => ({
+      dir: folder,
+      file: 'index.md',
+    }));
 
   return designsFolders;
 }
@@ -54,7 +54,7 @@ export function getSortedDesignsData() {
 }
 
 export function getAllDesignIds() {
-  const fileNames = fs.readdirSync(designsDirectory);
+  const fileNames = fs.readdirSync(`${process.cwd()}${designsDir}`);
   return fileNames.map((fileName) => {
     return {
       params: {
@@ -65,7 +65,7 @@ export function getAllDesignIds() {
 }
 
 export async function getDesignData(id: string) {
-  const fullPath = path.join('content/designs', `${id}/index.md`);
+  const fullPath = `content/designs/${id}/index.md`;
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section

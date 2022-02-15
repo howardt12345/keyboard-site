@@ -25,7 +25,7 @@ export function getSortedDesignsData() {
     const id = fileName.replace(/\.md$/, '');
 
     // Read markdown file as string
-    const fullPath = path.join(designsDirectory, fileName, 'index.md');
+    const fullPath = path.join('content/designs', fileName, 'index.md');
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use gray-matter to parse the post metadata section
@@ -60,7 +60,7 @@ export function getAllDesignIds() {
 }
 
 export async function getDesignData(id: string) {
-  const fullPath = path.join(designsDirectory, `${id}/index.md`);
+  const fullPath = path.join('content/designs', `${id}/index.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section

@@ -1,10 +1,9 @@
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const designsDir = '/content/designs';
+export const designsDir = '/content/designs';
 
 export interface IDesignData {
   id: string;
@@ -18,7 +17,7 @@ export interface IDesignData {
 
 export function getDesignsFolders() {
   const designsFolders = fs
-    .readdirSync(path.join(process.cwd(), designsDir))
+    .readdirSync(`${process.cwd()}/public${designsDir}`)
     .map((folder) => ({
       dir: folder,
       file: 'index.md',
@@ -28,19 +27,19 @@ export function getDesignsFolders() {
 }
 
 export function getSortedDesignsData() {
-  // Get file names under /designs
+  // Get design folders
   const designFolders = getDesignsFolders();
 
+  // Read design data from design files
   const designs = designFolders.map(({ dir, file }) => {
     const fileContents = fs
-      .readFileSync(`content/designs/${dir}/${file}`)
+      .readFileSync(`public/content/designs/${dir}/${file}`)
       .toString();
 
     const { data } = matter(fileContents);
 
     return {
       id: dir,
-      path: designsDir,
       ...(data as Omit<IDesignData, 'id'>),
     };
   });
@@ -55,7 +54,7 @@ export function getSortedDesignsData() {
 }
 
 export function getAllDesignIds() {
-  const fileNames = fs.readdirSync(path.join(process.cwd(), designsDir));
+  const fileNames = fs.readdirSync(`${process.cwd()}/public${designsDir}`);
   return fileNames.map((fileName) => {
     return {
       params: {
@@ -66,7 +65,7 @@ export function getAllDesignIds() {
 }
 
 export async function getDesignData(id: string) {
-  const fullPath = `content/designs/${id}/index.md`;
+  const fullPath = `public/content/designs/${id}/index.md`;
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section
@@ -82,7 +81,6 @@ export async function getDesignData(id: string) {
   return {
     id,
     contentHtml,
-    path: designsDir,
     ...(matterResult.data as Omit<IDesignData, 'id'>),
   };
 }

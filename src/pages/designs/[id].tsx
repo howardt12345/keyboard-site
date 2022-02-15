@@ -1,5 +1,10 @@
 import { Layout } from '@components';
-import { getAllDesignIds, getDesignData, IDesignData } from '@lib/designs';
+import {
+  designsDir,
+  getAllDesignIds,
+  getDesignData,
+  IDesignData,
+} from '@lib/designs';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 import { FlexContainer, Heading, media, Section } from '@styles';
@@ -50,7 +55,7 @@ export default function Design({
         <Heading>{designData.name}</Heading>
         <StyledContainer>
           <StyledImage
-            src={`${designData.path}/${designData.id}/${designData.img}`}
+            src={`${designsDir}/${designData.id}/${designData.img}`}
             alt={designData.name}
             width='600'
             height='400'

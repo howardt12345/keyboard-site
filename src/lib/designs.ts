@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
@@ -17,7 +18,7 @@ export interface IDesignData {
 
 export function getDesignsFolders() {
   const designsFolders = fs
-    .readdirSync(`${process.cwd()}${designsDir}`)
+    .readdirSync(path.join(process.cwd(), designsDir))
     .map((folder) => ({
       dir: folder,
       file: 'index.md',
@@ -54,7 +55,7 @@ export function getSortedDesignsData() {
 }
 
 export function getAllDesignIds() {
-  const fileNames = fs.readdirSync(`${process.cwd()}${designsDir}`);
+  const fileNames = fs.readdirSync(path.join(process.cwd(), designsDir));
   return fileNames.map((fileName) => {
     return {
       params: {

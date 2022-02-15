@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const dir = '/content/designs';
-const designsDirectory = path.join(process.cwd(), dir);
+const designsDir = '/content/designs';
+const designsDirectory = path.join(process.cwd(), designsDir);
 
 export interface IDesignData {
   id: string;
@@ -17,29 +17,34 @@ export interface IDesignData {
   path?: string;
 }
 
+export function getDesignsFolders() {
+  const designsFolders = fs.readdirSync(designsDirectory).map((folder) => ({
+    dir: folder,
+    file: 'index.md',
+  }));
+
+  return designsFolders;
+}
+
 export function getSortedDesignsData() {
   // Get file names under /designs
-  const fileNames = fs.readdirSync(designsDirectory);
-  const allDesignsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '');
+  const designFolders = getDesignsFolders();
 
-    // Read markdown file as string
-    const fullPath = path.join('content/designs', fileName, 'index.md');
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const designs = designFolders.map(({ dir, file }) => {
+    const fileContents = fs
+      .readFileSync(`content/designs/${dir}/${file}`)
+      .toString();
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+    const { data } = matter(fileContents);
 
-    // Combine the data with the id
     return {
-      id,
-      path: dir,
-      ...(matterResult.data as Omit<IDesignData, 'id'>),
+      id: dir,
+      path: designsDir,
+      ...(data as Omit<IDesignData, 'id'>),
     };
   });
-  // Sort designs by date
-  return allDesignsData.sort((a, b) => {
+
+  return designs.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
@@ -76,7 +81,7 @@ export async function getDesignData(id: string) {
   return {
     id,
     contentHtml,
-    path: dir,
+    path: designsDir,
     ...(matterResult.data as Omit<IDesignData, 'id'>),
   };
 }

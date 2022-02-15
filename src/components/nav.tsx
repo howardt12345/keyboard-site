@@ -296,7 +296,13 @@ class Nav extends Component<{ animate: boolean }> {
             )}
           </TransitionGroup>
 
-          <ToggleButton />
+          <TransitionGroup component={null}>
+            {isMounted && (
+              <CSSTransition classNames={fadeClass} timeout={timeout}>
+                <ToggleButton />
+              </CSSTransition>
+            )}
+          </TransitionGroup>
 
           <TransitionGroup component={null}>
             {isMounted && (

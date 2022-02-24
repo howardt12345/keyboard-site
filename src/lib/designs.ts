@@ -10,6 +10,9 @@ export interface IDesignData {
   name: string;
   repo?: string;
   firmware?: string;
+  qmk?: string;
+  via?: string;
+  vial?: string;
   date: string;
   img?: string;
   path?: string;

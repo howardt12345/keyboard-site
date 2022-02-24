@@ -61,7 +61,7 @@ const StyledTitle = styled.h2`
   ${media.tablet`display: none;`};
 `;
 const StyledLogo = styled.div`
-  colo: r ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.accent};
   fill: ${({ theme }) => theme.colors.accent};
   ${mixins.flexCenter};
   a {

@@ -1,5 +1,11 @@
 import React from 'react';
-import { IconLogo, IconNotFound } from '@components/icons';
+import {
+  IconLogo,
+  IconNotFound,
+  QMKLogo,
+  VialLogo,
+  ViaLogo,
+} from '@components/icons';
 import {
   MdAccountCircle,
   MdBrightness3,
@@ -61,10 +67,16 @@ const FormattedIcon = ({ name }: { name: string }) => {
       return <IconNotFound />;
     case 'PlayStore':
       return <FaGooglePlay />;
+    case 'QMK':
+      return <QMKLogo />;
     case 'Redbubble':
       return <SiRedbubble />;
     case 'Star':
       return <FaStar />;
+    case 'Via':
+      return <ViaLogo />;
+    case 'Vial':
+      return <VialLogo />;
     default:
       return <FaExternalLinkAlt />;
   }

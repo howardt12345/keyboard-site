@@ -1,4 +1,4 @@
-import { Layout } from '@components';
+import { IconButton, Layout } from '@components';
 import {
   designsDir,
   getAllDesignIds,
@@ -15,6 +15,22 @@ const StyledContainer = styled(FlexContainer)`
   margin-top: 1rem;
 `;
 
+const StyledHeadingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const StyledIcons = styled.div`
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+`;
+
 export const Line = styled.hr`
   width: 100%;
   height: 1px;
@@ -26,7 +42,6 @@ const StyledInfoSection = styled.div`
   margin-top: 0;
   margin-left: 1rem;
   ${media.desktop`margin-top: 1rem; margin-left: 0;`};
-  width: 35%;
   ul {
     margin-block-start: 0px;
     margin-block-end: 0.5em;
@@ -61,7 +76,19 @@ export default function Design({
   return (
     <Layout isHome={false} animateNav={false} footer={true}>
       <Section>
-        <Heading>{designData.name}</Heading>
+        <StyledHeadingContainer>
+          <Heading>{designData.name}</Heading>
+          <StyledIcons>
+            {designData.repo && (
+              <IconButton name='GitHub' url={designData.repo} />
+            )}
+            {designData.qmk && <IconButton name='QMK' url={designData.qmk} />}
+            {designData.via && <IconButton name='Via' url={designData.via} />}
+            {designData.vial && (
+              <IconButton name='Vial' url={designData.vial} />
+            )}
+          </StyledIcons>
+        </StyledHeadingContainer>
         <Line />
         <StyledContainer>
           <StyledImage

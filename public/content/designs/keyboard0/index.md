@@ -2,7 +2,7 @@
 name: "keyboard0"
 img: "kb0p2.jpg"
 repo: "https://github.com/howardt12345/keyboard0"
-firmware: "https://github.com/howardt12345/qmk_firmware/tree/ht12345/keyboard0"
+qmk: "https://github.com/howardt12345/qmk_firmware/tree/ht12345/keyboard0"
 date: "2022-01-30"
 ---
 

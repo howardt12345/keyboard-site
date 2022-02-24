@@ -12,6 +12,9 @@ const StyledList = styled.ul`
   margin: 0;
   list-style: none;
   color: ${({ theme }) => theme.colors.textPrimary};
+  li {
+    padding: 6px;
+  }
 `;
 
 const Social = () => (

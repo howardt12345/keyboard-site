@@ -4,7 +4,7 @@ import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
 
 const StyledLink = styled.a`
-  padding: 12px;
+  padding: 6px;
   &:hover,
   &:focus {
     transform: translateY(-3px);

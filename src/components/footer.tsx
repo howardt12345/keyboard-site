@@ -28,7 +28,7 @@ const Footer = () => {
       <Social />
       <StyledMetadata>
         <StyledGitHubLink
-          href='https://github.com/howardt12345/website-v3'
+          href='https://howardt12345.com/'
           target='_blank'
           rel='nofollow noopener noreferrer'
         >

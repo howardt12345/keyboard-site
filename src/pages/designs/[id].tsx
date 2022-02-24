@@ -82,6 +82,9 @@ export default function Design({
             {designData.repo && (
               <IconButton name='GitHub' url={designData.repo} />
             )}
+            {designData.firmware && (
+              <IconButton name='CPU' url={designData.firmware} />
+            )}
             {designData.qmk && <IconButton name='QMK' url={designData.qmk} />}
             {designData.via && <IconButton name='Via' url={designData.via} />}
             {designData.vial && (

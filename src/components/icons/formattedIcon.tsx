@@ -28,6 +28,7 @@ import {
 import { CgGitFork } from 'react-icons/cg';
 import { ImLinkedin } from 'react-icons/im';
 import { SiRedbubble } from 'react-icons/si';
+import { BsCpuFill } from 'react-icons/bs';
 
 const FormattedIcon = ({ name }: { name: string }) => {
   switch (name) {
@@ -39,6 +40,8 @@ const FormattedIcon = ({ name }: { name: string }) => {
       return <MdFolderOpen />;
     case 'Contact':
       return <MdContactMail />;
+    case 'CPU':
+      return <BsCpuFill />;
     case 'dark':
       return <MdBrightness7 />;
     case 'Dribbble':

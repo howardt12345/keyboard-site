@@ -11,7 +11,7 @@ date: "2022-01-30"
 **MCU:**
 - p2: STM32F303CBT6
 
-**Firmware:** QMK, VIA, Vial
+**Firmware:** QMK (current), VIA & Vial (planned)
 
 **Case:** Currently undetermined
 

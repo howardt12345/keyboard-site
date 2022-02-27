@@ -13,6 +13,7 @@ import React from 'react';
 
 const StyledContainer = styled(FlexContainer)`
   margin-top: 1rem;
+  justify-content: flex-start;
 `;
 
 const StyledHeadingContainer = styled.div`

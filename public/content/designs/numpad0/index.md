@@ -11,8 +11,8 @@ date: "2022-02-28"
 
 **Layout:** Numpad + Alt key
 
-**MCU:** Designed to be used with a Pro Micro or equivalent
-- Supports RP2040 with the [KB2040](https://www.adafruit.com/product/5302)
+**MCU:** Designed to be used with a Pro Micro
+- Supports RP2040 with the __[KB2040](https://www.adafruit.com/product/5302)__
 
 **Firmware:** 
 - QMK: Pro Micro

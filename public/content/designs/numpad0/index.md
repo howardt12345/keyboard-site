@@ -7,8 +7,6 @@ vial: "https://github.com/howardt12345/vial-qmk/tree/ht12345/numpad/keyboards/ht
 date: "2022-02-28"
 ---
 
-**This current page is a WIP.**
-
 **Layout:** Numpad + Alt key
 
 **MCU:** Designed to be used with a Pro Micro

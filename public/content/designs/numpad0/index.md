@@ -2,7 +2,7 @@
 name: "numpad"
 img: "numpad0.jpg"
 repo: "https://github.com/howardt12345/numpad"
-qmk: "https://github.com/howardt12345/qmk_firmware/tree/ht12345/numpad"
+qmk: "https://github.com/howardt12345/qmk_firmware/tree/ht12345/numpad/keyboards/ht12345/numpad"
 vial: "https://github.com/howardt12345/vial-qmk/tree/ht12345/numpad/keyboards/ht12345/numpad"
 date: "2022-02-28"
 ---

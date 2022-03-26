@@ -27,5 +27,5 @@ date: "2022-01-30"
 **Availability:** Limited prototype quantities
 
 **Versions:** 
-- Tested: p2
-- Untested: p2.1, p3
+- Tested: p2, p2.1
+- Untested: p3

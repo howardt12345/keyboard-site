@@ -19,6 +19,7 @@ const StyledContainer = styled(FlexContainer)`
 const StyledHeadingContainer = styled.div`
   display: flex;
   flex-direction: row;
+  ${media.thone`flex-direction: column`};
   justify-content: space-between;
 `;
 
@@ -42,7 +43,8 @@ export const Line = styled.hr`
 const StyledInfoSection = styled.div`
   margin-top: 0;
   margin-left: 1rem;
-  ${media.desktop`margin-top: 1rem; margin-left: 0;`};
+  width: 40%;
+  ${media.desktop`margin-top: 1rem; margin-left: 0; width: 100%;`};
   ul {
     margin-block-start: 0px;
     margin-block-end: 0.5em;

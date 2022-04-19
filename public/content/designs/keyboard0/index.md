@@ -5,7 +5,7 @@ repo: "https://github.com/howardt12345/keyboard0"
 qmk: "https://github.com/howardt12345/qmk_firmware/tree/ht12345/keyboard0/keyboards/ht12345/keyboard0"
 via: "https://github.com/howardt12345/qmk_firmware/tree/ht12345/keyboard0/keyboards/ht12345/keyboard0/keymaps/via"
 vial: "https://github.com/howardt12345/vial-qmk/tree/ht12345/keyboard0/keyboards/ht12345/keyboard0"
-date: "2022-01-30"
+date: "2022-04-18"
 ---
 
 **Layout:** TKL + left macro column
@@ -13,9 +13,11 @@ date: "2022-01-30"
 **MCU:**
 - p2 & revisions: STM32F303
 
-**Firmware:** QMK, VIA (current), Vial (planned)
+**Firmware:** QMK, VIA, Vial
 
-**Case:** Currently undetermined
+**Cases:** 
+- Stacked case
+  - FR4 plates with map design
 
 **Features:**
 - 2 Rotary Encoders
@@ -24,7 +26,7 @@ date: "2022-01-30"
 - Daughterboard support
 - Hotswap ANSI layout
 
-**Availability:** Limited prototype quantities
+**Availability:** 2 prototypes available [(contact for details)](mailto:me@howardt12345.com)
 
 **Versions:** 
 - Tested: p2, p2.1

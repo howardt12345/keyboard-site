@@ -31,11 +31,6 @@ module.exports = withFonts({
         destination: '/designs/hub-daughterboard',
         permanent: false,
       },
-      {
-        source: '/',
-        destination: '/designs?home=true',
-        permanent: true,
-      },
     ];
   },
 });

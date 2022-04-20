@@ -28,7 +28,7 @@ module.exports = withFonts({
       {
         source: '/np0',
         destination: '/designs/numpad0',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/db0',
@@ -39,6 +39,11 @@ module.exports = withFonts({
         source: '/hubdb',
         destination: '/designs/hub-daughterboard',
         permanent: false,
+      },
+      {
+        source: '/',
+        destination: '/designs?home=true',
+        permanent: true,
       },
     ];
   },

@@ -11,12 +11,12 @@ date: "2022-04-18"
 **Layout:** TKL + left macro column
 
 **MCU:**
-- p2 & revisions: STM32F303
+- STM32F303
 
 **Firmware:** QMK, VIA, Vial
 
 **Cases:** 
-- Stacked case
+- Stacked acrylic case
   - FR4 plates with map design
 
 **Features:**
@@ -29,5 +29,4 @@ date: "2022-04-18"
 **Availability:** 2 prototypes available [(contact for details)](mailto:me@howardt12345.com)
 
 **Versions:** 
-- Tested: p2, p2.1
-- Untested: p3
+- p2, p2.1, p3
